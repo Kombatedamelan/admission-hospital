@@ -23,16 +23,13 @@ const assurances = [
   },
 ]
 
-const currencies = ["F CFA", "EUR", "USD"]
+// const currencies = ["F CFA", "EUR", "USD"]
 
 export default function PaymentPage() {
   const router = useRouter()
 
-  // --- États pour les données patient + panier ---
   const [patientName, setPatientName] = useState("")
   const [cart, setCart] = useState<{ label: string; price: number; quantity: number }[]>([])
-
-  // --- États pour le paiement ---
   const [paymentMode, setPaymentMode] = useState(paymentModes[0])
   const [selectedAssurance, setSelectedAssurance] = useState<string | null>(null)
   const [selectedService, setSelectedService] = useState<string | null>(null)
@@ -40,14 +37,12 @@ export default function PaymentPage() {
   const [referenceNumber, setReferenceNumber] = useState("")
   // const [currency, setCurrency] = useState(currencies[0])
 
-  // --- Calcul du total brut ---
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
-  // --- Calcul du montant à payer (application du taux assurance si applicable) ---
+
   const amountToPay =
     paymentMode === "Assurance" && rate !== null ? Math.round(total * rate) : total
 
-  // --- Chargement des données patient + panier depuis localStorage au montage ---
   useEffect(() => {
     const data = localStorage.getItem("acte-patient")
     if (data) {
@@ -57,7 +52,7 @@ export default function PaymentPage() {
     }
   }, [])
 
-  // --- Mise à jour du taux quand assurance ou service changent ---
+  
   useEffect(() => {
     if (paymentMode === "Assurance" && selectedAssurance && selectedService) {
       const ass = assurances.find(a => a.label === selectedAssurance)
@@ -68,7 +63,7 @@ export default function PaymentPage() {
     }
   }, [paymentMode, selectedAssurance, selectedService])
 
-  // --- Gestion du clic sur "Payer maintenant" ---
+
   function handlePayNow() {
     if (!patientName) {
       toast.error("Le nom du patient est obligatoire.")
@@ -85,10 +80,10 @@ export default function PaymentPage() {
       }
     }
 
-    // Ici tu peux ajouter l'appel à ton backend pour enregistrer le paiement
+   
     toast.success("Paiement effectué avec succès !")
     localStorage.removeItem("acte-patient")
-    router.push("/") // redirige vers l'accueil ou une autre page
+    router.push("/acte") // redirige vers l'accueil ou une autre page
   }
 
   return (
