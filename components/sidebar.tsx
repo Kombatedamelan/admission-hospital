@@ -102,7 +102,7 @@ export default function AppSidebar() {
               Déconnexion
             </Button>
           </Link>
-          {/* <Button
+          <Button
             variant="ghost"
             onClick={toggleTheme}
             className="w-full flex items-center gap-2 justify-start hover:bg-gray-100 dark:hover:bg-zinc-800"
@@ -118,7 +118,7 @@ export default function AppSidebar() {
                 <span>Mode sombre</span>
               </>
             )}
-          </Button> */}
+          </Button>
         </div>
       </aside>
 
