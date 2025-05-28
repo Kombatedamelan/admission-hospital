@@ -38,7 +38,7 @@ export default function PaymentPage() {
   const [selectedService, setSelectedService] = useState<string | null>(null)
   const [rate, setRate] = useState<number | null>(null)
   const [referenceNumber, setReferenceNumber] = useState("")
-  const [currency, setCurrency] = useState(currencies[0])
+  // const [currency, setCurrency] = useState(currencies[0])
 
   // --- Calcul du total brut ---
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
@@ -220,7 +220,7 @@ export default function PaymentPage() {
           )}
 
           <div className="mb-6 text-lg font-bold">
-            Montant à payer : {amountToPay.toLocaleString()} {currency}
+            Montant à payer : {amountToPay.toLocaleString()} F CFA
           </div>
 
           <button

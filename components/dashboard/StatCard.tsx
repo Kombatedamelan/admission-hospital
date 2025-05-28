@@ -1,16 +1,16 @@
 // components/dashboard/StatCard.tsx
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
+// import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+// import { cn } from "@/lib/utils"
 import { ReactNode } from "react"
 
-type StatCardProps = {
-  title: string
-  value: string | number
-  icon?: ReactNode
-  className?: string
-}
+// type StatCardProps = {
+//   title: string
+//   value: string | number
+//   icon?: ReactNode
+//   className?: string
+// }
 export function StatCard({ title, value, icon, color = "bg-blue-100" }: {
   title: string,
   value: string | number,
