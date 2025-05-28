@@ -112,7 +112,7 @@ export default function PaymentPage() {
             className="w-full border border-gray-300 rounded-md p-2 mb-6"
           />
 
-          <h2 className="text-xl font-semibold mb-4">Panier d'analyses</h2>
+          <h2 className="text-xl font-semibold mb-4">Panier d&apos;analyses</h2>
           <ul className="space-y-2 mb-4 max-h-48 overflow-y-auto">
             {cart.map((item, idx) => (
               <li key={idx} className="flex justify-between border-b pb-1">

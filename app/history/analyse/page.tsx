@@ -50,7 +50,7 @@ export default function HistoriqueAnalysesPage() {
       {/* Top bar */}
       <div className="bg-white shadow sticky top-0 z-50 border-b border-blue-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-700">Historique d'analyses</h1>
+          <h1 className="text-2xl font-bold text-blue-700">Historique d&apos;analyses</h1>
           <button
             onClick={() => router.push("/analyse")}
             className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
@@ -95,7 +95,7 @@ export default function HistoriqueAnalysesPage() {
               <tr>
                 <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700">Nom du patient</th>
                 <th className="px-4 py-3 text-sm font-semibold text-gray-700">Date</th>
-                <th className="px-4 py-3 text-sm font-semibold text-gray-700">Nombre d'analyses</th>
+                <th className="px-4 py-3 text-sm font-semibold text-gray-700">Nombre d&apos;analyses</th>
                 <th className="px-4 py-3 text-sm font-semibold text-gray-700">Prix total</th>
                 <th className="px-4 py-3 text-sm font-semibold text-gray-700">Action</th>
               </tr>
